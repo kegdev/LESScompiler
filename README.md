@@ -55,7 +55,8 @@ If you have any issues, please let me know. This plugin is 'as-is', meaning no w
 Compiling Issues
 ------------
 If you are having any issues compiling and the log shows parsing errors:
-1. check your code where the parser indicates the issue is. (That is almost always the fix.)
+
+1. Check your code where the parser indicates the issue is. (That is almost always the fix.)
 2. Still happening? Check for the latest version of [lessphp](http://leafo.net/lessphp/) and make sure your */lib/lessphp* directory contains the latest version of *lessc.inc.php*. 
 
 TODO List
