@@ -41,9 +41,9 @@ Installation
 4. Log out and back in to activate extension configuration page.
 5. Go to System > Configuration > KEGdev Addons > LESS Compiler and configure settings.
 6. Go to System > Cache Management. 
-	* Enable LESS > CSS Output Cache entry. 
-	* Refresh LESS > CSS Output Cache entry. 
-7. If logging is enabled in config (it is by default), check var/log/LESS_Compiler.log for complete compiler activity. 
+	1. Enable LESS > CSS Output Cache entry. 
+	2. Refresh LESS > CSS Output Cache entry. 
+7. If logging is enabled in config (it is by default), check *var/log/LESS_Compiler.log* for complete compiler activity. 
 
 Compatibility
 ------------
@@ -52,10 +52,15 @@ This extension was designed on Magento Enterprise 1.x platform and has been test
 
 If you have any issues, please let me know. This plugin is 'as-is', meaning no warranty of any sort is implied.
 
+Compiling Issues
+------------
+If you are having any issues compiling and the log shows parsing errors:
+1. check your code where the parser indicates the issue is. (That is almost always the fix.)
+2. Still happening? Check for the latest version of [lessphp](http://leafo.net/lessphp/) and make sure your */lib/lessphp* directory contains the latest version of *lessc.inc.php*. 
 
 TODO List
 ------
 
 * The plugin only works at the default global level - it has no support currently for enabling-disabling config options on store or website levels. Be warned: if you have a large installation, running this will process everything with a LESS file within the skin/frontend directory. This is not an issue if you keep the hierarchy of your less and css files the same.
 * Adding a check for the latest version of [lessphp](http://leafo.net/lessphp/). 
-* Add a frame within the configuration screen to show refreshable output of var/log/LESS_Compiler.log file if logging enabled.
+* Add a frame within the configuration screen to show refreshable output of *var/log/LESS_Compiler.log* file if logging enabled.
