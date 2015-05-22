@@ -1,6 +1,6 @@
 
     /**
-     * These source files is subject to the Academic Free License (AFL 3.0)
+     * These source files are subject to the Academic Free License (AFL 3.0)
      * that is bundled with this package in the file LICENSE_AFL.txt.
      * It is also available through the world-wide-web at this URL:
      * http://opensource.org/licenses/afl-3.0.php
