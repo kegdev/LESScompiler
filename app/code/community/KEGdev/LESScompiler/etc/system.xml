@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ *
+ * @category    KEGdev
+ * @package     KEGdev_LESScompiler
+ * @copyright   Copyright (c) 2015 Kevin Earl Gardner <keg@kegdev.com>
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */ 
+-->
+<config>
+    <tabs>
+        <kegdev translate="label">
+            <label>KEGdev Add-ons</label>
+            <sort_order>1</sort_order>
+        </kegdev>
+    </tabs>
+    <sections>
+        <lesscompiler translate="label" module="lesscompiler">
+            <label>LESS Compiler</label>
+            <tab>kegdev</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1</sort_order>
+            <show_in_default>1</show_in_default>
+            <groups>
+                <general translate="label">
+                    <label>Compiler Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <expanded>true</expanded>
+                    <fields>
+                        <enable translate="label comment">
+                            <label>Enable LESS Compiler</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment><![CDATA[Refresh the 'LESS > CSS Output' cache to run the compiler.]]></comment>
+                        </enable>
+                        <less_folder translate="label comment">
+                            <label>LESS File(s) Directory</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <depends><enable>1</enable></depends>
+                            <show_in_default>1</show_in_default>
+                            <comment><![CDATA[Path should be relative to the /skin/frontend/ directory.(ex. <strong>/skin/frontend/less/bob</strong> would be entered as <strong>less/bob</strong>.) Field defaults to <em>less</em> if empty.]]></comment>
+                        </less_folder>
+                        <css_folder translate="label comment">
+                            <label>CSS File(s) Directory</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <depends><enable>1</enable></depends>
+                            <show_in_default>1</show_in_default>
+                            <comment><![CDATA[Path should be relative to the /skin/frontend/ directory.(ex. <strong>/skin/frontend/css/bob</strong> would be entered as <strong>css/bob</strong>.) Field defaults to <em>css</em> if empty.]]></comment>
+                        </css_folder> 
+                        <minify translate="label comment">
+                            <label>Minify CSS files?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>4</sort_order>
+                            <depends><enable>1</enable></depends>
+                            <show_in_default>1</show_in_default>
+                            <comment><![CDATA[This will minify all CSS files that are compiled.]]></comment>
+                        </minify>                                               
+                    </fields>
+                </general>
+                <logging translate="label">
+                    <label>Logging</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <expanded>true</expanded>
+                    <fields>
+                        <activity translate="label comment">
+                            <label>Activity Logging</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment><![CDATA[Enables activity logging for each compiled LESS file. Log location: <strong>var/log/LESS_Compiler.log</strong>.]]></comment>
+                        </activity>   
+                        <minification translate="label comment">
+                            <label>Minification Logging</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <depends><activity>1</activity></depends>
+                            <show_in_default>1</show_in_default>
+                            <comment><![CDATA[Enables activity logging for each minification action. Log location: <strong>var/log/LESS_Compiler.log</strong>.]]></comment>
+                        </minification>     
+                        <error translate="label comment">
+                            <label>Error Logging</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <comment><![CDATA[Enables activity logging for each compile error. (Note: No UI error messages are given.) Log location: <strong>var/log/LESS_Compiler.log</strong>.]]></comment>
+                        </error>                                                                                       
+                    </fields>
+                </logging>                
+            </groups>
+        </lesscompiler>
+    </sections>
+</config>

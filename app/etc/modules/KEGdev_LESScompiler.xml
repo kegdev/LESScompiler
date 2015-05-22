@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <KEGdev_LESScompiler>
+            <active>true</active>
+            <codePool>community</codePool>
+        </KEGdev_LESScompiler>
+    </modules>
+</config> 

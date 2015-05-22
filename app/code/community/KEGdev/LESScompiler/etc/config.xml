@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <KEGdev_LESScompiler>
+            <version>1.0.0.0</version>
+        </KEGdev_LESScompiler>
+    </modules>
+    <global>
+        <models>
+            <lesscompiler>
+                <class>KEGdev_LESScompiler_Model</class>
+            </lesscompiler>
+        </models>
+        <events>
+            <adminhtml_cache_refresh_type>
+                <observers>
+                    <KEGdev_LESScompiler_model_observer>
+                        <type>singleton</type>
+                        <class>KEGdev_LESScompiler_Model_Observer</class>
+                        <method>adminhtml_cache_refresh_type</method>
+                    </KEGdev_LESScompiler_model_observer>
+                </observers>
+            </adminhtml_cache_refresh_type>
+        </events>
+        <helpers>
+            <lesscompiler>
+                <class>KEGdev_LESScompiler_Helper</class>
+            </lesscompiler>
+        </helpers>
+        <cache>
+            <types>
+                 <lesscompiler module="lesscompiler" translate="label description">
+                    <label>LESS > CSS Output</label>
+                    <description><![CDATA[Create/Update CSS from LESS files based on LESS Compiler configuration.]]></description>
+                    <tags>less_css</tags>
+                 </lesscompiler>
+            </types>
+        </cache>        
+    </global>
+    <default>
+        <lesscompiler>
+            <general>
+                <enable>1</enable>
+                <less_folder>less</less_folder>
+                <css_folder>css</css_folder>
+                <minify>0</minify>
+            </general>
+            <logging>
+                <activity>1</activity>
+                <minification>1</minification>
+                <error>1</error>
+            </logging>
+        </lesscompiler>
+    </default>    
+    <adminhtml>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <lesscompiler>
+                                            <title>KEGdev LESScompiler - All</title>
+                                        </lesscompiler>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>   
+</config>
